@@ -117,3 +117,7 @@ $ minikube ip
 Benim degerim bu sekilde. URL'i acip 192.168.49.2:31000 yazarsak, asgidaki sayfayi gormus oluruz.
 
 `$ minikube service jenkins` de sayfayi acacaktir.
+
+## How to Configure Jenkins to Build Your CI/CD Pipeline?
+
+![alt](cicdmodel/githubtojenkins.png)
