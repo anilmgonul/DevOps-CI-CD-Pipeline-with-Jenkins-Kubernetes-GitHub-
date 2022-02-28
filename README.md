@@ -121,3 +121,40 @@ Benim degerim bu sekilde. URL'i acip 192.168.49.2:31000 yazarsak, asgidaki sayfa
 ## How to Configure Jenkins to Build Your CI/CD Pipeline?
 
 ![alt](cicdmodel/githubtojenkins.png)
+
+Bu kisimda daha derinlere inip, hali hazirdaki GitHub reposuyla nasil CI/CD otomasyonu yapariz onu inceleyecegiz.
+
+#### How to Configure the GitHub Credentials in Jenkins?
+
+Multi-branch Pipeline modeline gecmeden once, Jenkins UI icerisinde bazi bilgiler(credentials) olusturacagiz. Sahip oldugumuz jenkinsfile her reponun bir parcasi olacagindan bu bilgileri olusturmak gerekli ki onu gidip fetch edebilelim.
+
+Nedir bu bilgiler:
+
+- **ORGANIZATION_NAME** GitHub organizasyonun adi olmali
+- **YOUR_DOCKERHUB_USERNAME** bu dummy bilgisi icerebilir.
+
+*Manage Jenkin* sekmesine gidip *Confiure System*'i secelim.
+
+![alt](cicdmodel/system_config.png)
+
+- Daha sonrasinda ise, **Global properties** kismina gelip **Environment variables** butonunu isaretleyelim.
+
+![alt](cicdmodel/global_var.png)
+
+- ORGANIZATION_NAME ve YOUR_DOCKERHUB_USERNAME olarak kaydedelim.
+
+![alt](cicdmodel/fill_global.png)
+
+- **New Item** isaretleyip yeni bir multi-branch organizasyonu olusturalim
+
+![alt](cicdmodel/webapp_multibranch.png)
+
+- **Branch Source** sekmesine GitHub reposunu eklememiz gerekiyor.
+
+![alt](cicdmodel/branchsource.png)
+
+Daha sonra ise, dosyamizi taratip, log'lara bakacagiz ve configure edecegiz.
+
+![alt](cicdmodel/scanlogs.png)
+
+`$ minikube ip` komutu ile verilen IP adresine girip uygulamayi gorebiliriz.
